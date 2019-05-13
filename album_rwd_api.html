@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>RWD置中靠左+Pixnet album api</title>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" media="all">
+</head>
+<style>
+  body{
+    background-color: black;
+    text-align: center;
+  }
+  .image{
+    width: 250px;
+    height: 200px;
+  }
+  .image-block{
+    opacity: 0;
+    width: 300px;
+    height: 1px;
+  }
+  .contents{
+    margin: 3em auto;
+    text-align: left;
+  }
+  @media (min-width: 300px) {
+    .contents{
+      width: 250px;
+    }
+  }
+  @media (min-width: 550px) {
+    .contents{
+      width: 500px;
+    }
+  }
+  @media (min-width: 800px) {
+    .contents{
+      width: 750px;
+    }
+  }
+  @media (min-width: 1050px) {
+    .contents{
+      width: 1000px;
+    }
+  }
+</style>
+<body>
+  <div class="contents">
+  </div>
+</body>
+<script src="js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+    for(let i = 1; i < 12; i++){
+        let img = $('<img class="image">');
+        img.prop('src', 'img/big_' + i + '.jpg');
+        $('.contents').append(img);
+    }
+    // Pixnet album api
+    // $.ajax({
+    //   type : "GET",
+    //   url: "https://emma.pixnet.cc/album/sets/8452980/elements?user=deancool99&format=json",
+    //   dataType: "json",
+    //   success: function( result ) {
+    //     console.log(result.elements);
+    //     for(let i = 0; i < result.elements.length; i++){
+    //       let img = $('<img class="image">');
+    //       img.prop('src', 'https://pic.pimg.tw/deancool99/' + result.elements[i].identifier + '.jpg');
+    //       $('.contents').append(img);
+    //     }
+    //   }
+    // });
+</script>
+</html>
